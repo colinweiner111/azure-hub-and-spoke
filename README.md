@@ -1,7 +1,17 @@
-```markdown
 # Azure Hub-Spoke Network Infrastructure
 
 Automated deployment and verification scripts for Azure hub-and-spoke network architecture with VPN connectivity and BGP routing.
+
+## Requirements
+
+**Azure CLI:** These scripts require Azure CLI to be installed and configured with appropriate Azure subscription permissions.
+
+**Bash Environment:** The scripts are written in bash and require a bash shell environment. Options include:
+- **Windows:** WSL (Windows Subsystem for Linux), Git Bash, or PowerShell with bash support
+- **macOS/Linux:** Native terminal environment
+- **Azure Cloud Shell:** Available but has 20-minute inactivity timeout
+
+**Runtime Consideration:** The deployment script takes over 60 minutes to complete. For uninterrupted execution, avoid Azure Cloud Shell due to its timeout limitations.
 
 ## Scripts
 
@@ -19,7 +29,7 @@ Automated Azure CLI script that deploys a complete hub-and-spoke network archite
 
 **Deployment time:** ~60 minutes
 
-### verify-hubspoke.sh
+### verify-hub-spoke.sh
 Infrastructure verification script with animated status checks and network topology display.
 
 **Verification includes:**
@@ -38,41 +48,10 @@ Infrastructure verification script with animated status checks and network topol
 
 ## Usage
 
-1. **Deploy infrastructure:**
-   ```bash
-   chmod +x deploy-hub-spoke.sh
-   ./deploy-hub-spoke.sh
-   ```
-
-2. **Verify deployment:**
-   ```bash
-   chmod +x verify-hubspoke.sh
-   # Update RESOURCE_GROUP variable in script
-   ./verify-hubspoke.sh
-   ```
-
-## Architecture
-
-```
-                    Spoke1
-                      |
-OnPrem ====== Internet ====== 🔥Hub
-                      |
-                    Spoke2
-```
-
-**Network Details:**
-- Hub: 10.0.0.0/23
-- Spoke1: 10.0.2.0/24
-- Spoke2: 10.0.3.0/24
-- OnPrem: 192.168.0.0/24
-- BGP ASNs: Hub (65509), OnPrem (65510)
-
-## Security Notes
-
-- Default VM passwords included for testing only
-- Firewall configured with "Allow All" rules for lab use
-- Replace with production security rules before use
-```
-
-Just copy everything between the code fences and paste it into your README.md file on GitHub.
+1. **Download the scripts:**
+```bash
+   # Download deployment script
+   wget https://raw.githubusercontent.com/colinweiner111/azure-hub-and-spoke/main/deploy-hub-spoke.sh
+   
+   # Download verification script
+   wget https://raw.githubusercontent.com/colinweiner111/azure-hub-and-spoke/main/verify-hub-spoke.sh
