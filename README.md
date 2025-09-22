@@ -56,8 +56,14 @@ Infrastructure verification script with animated status checks and network topol
    # Download deployment script
    wget https://raw.githubusercontent.com/colinweiner111/azure-hub-and-spoke/main/deploy-hub-spoke.sh
    
-   # Download verification script
+   # Download verification script  
    wget https://raw.githubusercontent.com/colinweiner111/azure-hub-and-spoke/main/verify-hub-spoke.sh
+   ```
+   
+   Or clone the entire repository:
+   ```bash
+   git clone https://github.com/colinweiner111/azure-hub-and-spoke.git
+   cd azure-hub-and-spoke
    ```
 
 2. **Deploy infrastructure:**
