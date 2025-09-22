@@ -1,9 +1,29 @@
+
 #!/bin/bash
 
 # Azure Hub-Spoke Network Deployment Script
-# Location: West US 3
-# Hub: Hub01 (10.0.0.0/23)
-# Spokes: Spoke01 (10.0.2.0/24), Spoke02 (10.0.3.0/24)
+# Version: 1.0
+# Date: September 2025
+# Description: Complete hub-spoke network topology with Site-to-Site VPN, BGP, Azure Firewall, and Bastion
+#
+# Architecture Overview:
+# - Location: West US 3
+# - Hub: Hub01 (10.0.0.0/23)
+# - Spokes: Spoke01 (10.0.2.0/24), Spoke02 (10.0.3.0/24)
+# - OnPrem: OnPrem01 (192.168.0.0/24) - simulated on-premises environment
+# - VPN Gateways: Active/Active configuration with BGP
+# - Security: Azure Firewall Premium with allow-all rules for testing
+# - Management: Azure Bastion for secure VM access
+#
+# Version History:
+# v1.0 - Initial release
+#        - Hub-spoke topology with 2 spokes
+#        - Site-to-Site VPN with BGP between Hub and OnPrem
+#        - Azure Firewall Premium with basic allow-all rules
+#        - Azure Bastion for secure access
+#        - Route tables directing spoke traffic through firewall
+#        - Active/Active VPN gateway configuration
+#        - Ubuntu VMs in each network for testing
 
 set -e
 
