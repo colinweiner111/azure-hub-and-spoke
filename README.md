@@ -1,3 +1,6 @@
+Here's the complete markdown content for copy/paste:
+
+```
 # Azure Hub-Spoke Network Infrastructure
 
 Automated deployment and verification scripts for Azure hub-and-spoke network architecture with VPN connectivity and BGP routing.
@@ -49,9 +52,47 @@ Infrastructure verification script with animated status checks and network topol
 ## Usage
 
 1. **Download the scripts:**
-```bash
+   ```bash
    # Download deployment script
    wget https://raw.githubusercontent.com/colinweiner111/azure-hub-and-spoke/main/deploy-hub-spoke.sh
    
    # Download verification script
    wget https://raw.githubusercontent.com/colinweiner111/azure-hub-and-spoke/main/verify-hub-spoke.sh
+   ```
+
+2. **Deploy infrastructure:**
+   ```bash
+   chmod +x deploy-hub-spoke.sh
+   ./deploy-hub-spoke.sh
+   ```
+
+3. **Verify deployment:**
+   ```bash
+   chmod +x verify-hub-spoke.sh
+   # Update RESOURCE_GROUP variable in script
+   ./verify-hub-spoke.sh
+   ```
+
+## Architecture
+
+```
+                    Spoke1
+                      |
+OnPrem ====== Internet ====== 🔥Hub
+                      |
+                    Spoke2
+```
+
+**Network Details:**
+- Hub: 10.0.0.0/23
+- Spoke1: 10.0.2.0/24
+- Spoke2: 10.0.3.0/24
+- OnPrem: 192.168.0.0/24
+- BGP ASNs: Hub (65509), OnPrem (65510)
+
+## Security Notes
+
+- Default VM passwords included for testing only
+- Firewall configured with "Allow All" rules for lab use
+- Replace with production security rules before use
+```
