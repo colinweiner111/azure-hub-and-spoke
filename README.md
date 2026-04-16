@@ -70,17 +70,17 @@ Run `deploy.ps1` from PowerShell. The only required parameter is `-ResourceGroup
 
 ```powershell
 # Minimal — uses current subscription, centralus region
-.\deploy.ps1 -ResourceGroupName rg-hub-spoke-centralus01
+.\deploy.ps1 -ResourceGroupName rg-hub-spoke-demo
 
 # Specify a different region
 .\deploy.ps1 -ResourceGroupName rg-hub-spoke-eastus01 -Location eastus
 
 # Specify a subscription
-.\deploy.ps1 -ResourceGroupName rg-hub-spoke-centralus01 -SubscriptionId 00000000-0000-0000-0000-000000000000
+.\deploy.ps1 -ResourceGroupName rg-hub-spoke-demo -SubscriptionId 00000000-0000-0000-0000-000000000000
 
 # All options
 .\deploy.ps1 `
-    -ResourceGroupName  rg-hub-spoke-centralus01 `
+    -ResourceGroupName  rg-hub-spoke-demo `
     -SubscriptionId     00000000-0000-0000-0000-000000000000 `
     -Location           centralus `
     -AdminUsername      azureuser
